@@ -1,0 +1,18 @@
+
+body{
+    margin: 0 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+}
+
+.img-responsive{
+    position: absolute;
+
+    min-height : 100%;
+    min-width : 100%;
+    background-size:80% 100%;
+    background-repeat:no-repeat;
+    background-size: cover;
+
+}
