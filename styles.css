@@ -37,4 +37,9 @@ body{
 
   .data{
     display: none;
+
+  }
+  .g-signin2{
+    padding: 0.8rem;
+    
   }
