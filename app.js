@@ -1,11 +1,4 @@
 function onSignIn(googleUser) {
-    $(document).ready(function(){
-
-        $('a[href=http://www.google.com]').click(function(){
-          window.open(this.href);
-          return false;
-        });
-      });
     var profile = googleUser.getBasicProfile();
   $("#name").text(profile.getName());
   $("#email").text(profile.getEmail());
