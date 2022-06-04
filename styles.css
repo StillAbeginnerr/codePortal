@@ -34,3 +34,7 @@ body{
       overflow-y: hidden;
     }
   }
+
+  .data{
+    display: none;
+  }
