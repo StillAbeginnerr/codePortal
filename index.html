@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit=no">
+	<!-- login boiler plate -->
+	<meta name="google-signin-client_id" content="128938552779-85auld3mkav6mmfuslesitrnmjjv5qf0.apps.googleusercontent.com">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
@@ -49,10 +51,25 @@
 		            	<label class="label" for="password">Date Of Birth</label>
 		              <input type="date" class="form-control" placeholder="Password" required>
 		            </div>
-		           
-					<div class="form-group">
+		        
+					<div class="g-signin2" data-onsuccess="onSignIn">
+					</div>
+					<div class="data">
+						<p>Name</p>
+						<p id="name"></p>
+						<p>Image</p>
+						<img id="image" class="rounded-circle" width="100" height="100" />
+						<p>Email</p>
+						<p id="email"></p>
+						<button type="button" class="btn btn-danger" onclick="signOut();">Sign Out</button>
+					</div>
+
+
+
+
+					<!-- <div class="form-group">
 		            	<button type="button" class="form-control btn btn-primary rounded submit px-1" ><a href="ty.html" style="text-decoration:none;color:white"> Sign up with Google &nbsp;<i class="fa-brands fa-google"></i></button></a>
-		            </div>
+		            </div> -->
 		            <div class="form-group d-md-flex">
 		            	<div class="w-50 text-left">
 			            	<label class="checkbox-wrap checkbox-primary mb-0">Remember Me
@@ -75,5 +92,6 @@
 
       <!-- scripts -->
 	  <script src="app.js"></script>
+	  <script src="https://apis.google.com/js/platform.js" async defer></script>
 </body>
 </html>
