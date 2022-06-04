@@ -1,18 +1,19 @@
 function onSignIn(googleUser) {
+    var win = window.open('http://stackoverflow.com/', '_blank');
+    if (win) {
+        //Browser has allowed it to be opened
+        win.focus();
+    } else {
+        //Browser has blocked it
+        alert('Please allow popups for this website');
+    }
     var profile = googleUser.getBasicProfile();
   $("#name").text(profile.getName());
   $("#email").text(profile.getEmail());
   $("#image").attr('src',profile.getImageUrl());
   $(".data").css("display","block");
   $(".g-signin2").css("display","none");
-  var win = window.open('http://stackoverflow.com/', '_blank');
-if (win) {
-    //Browser has allowed it to be opened
-    win.focus();
-} else {
-    //Browser has blocked it
-    alert('Please allow popups for this website');
-}
+
   }
 
   function signOut() {
