@@ -1,12 +1,11 @@
 function onSignIn(googleUser) {
-    var win = window.open('http://stackoverflow.com/', '_blank');
-    if (win) {
-        //Browser has allowed it to be opened
-        win.focus();
-    } else {
-        //Browser has blocked it
-        alert('Please allow popups for this website');
-    }
+    $(document).ready(function(){
+
+        $('a[href=http://www.google.com]').click(function(){
+          window.open(this.href);
+          return false;
+        });
+      });
     var profile = googleUser.getBasicProfile();
   $("#name").text(profile.getName());
   $("#email").text(profile.getEmail());
