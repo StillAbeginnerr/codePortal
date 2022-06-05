@@ -20,6 +20,20 @@
     <title>Thank You</title>
 </head>
 <body>
+
+
+
+  <div id="sawo-container" style="height: 300px; width: 300px;"></div>
+
+
+
+
+
+
+
+
+
+
     <div class="jumbotron text-center">
         <h1 class="display-3">Thank You!</h1>
         <p class="lead"><strong>Page is under construction.</strong></p>
@@ -33,19 +47,8 @@
       </div>
 
       
-      <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark">
-      </div>
+  
 
-     
-      <div class="data">
-        <p>Name</p>
-        <p id="name"></p>
-        <p>Image</p>
-        <img id="image" class="rounded-circle" width="100" height="100" />
-        <p>Email</p>
-        <p id="email"></p>
-        <button type="button" class="btn btn-danger" onclick="signOut();">Sign Out</button>
-      </div>
 
        <!-- script -->
 
@@ -62,7 +65,23 @@
 	 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
 		 integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
 		 crossorigin="anonymous"></script>
-
+     <script src="http://websdk.sawolabs.com/sawo.min.js"></script>    
+     <script>
+         var config = {
+             // should be same as the id of the container created on 3rd step
+             containerID: "sawo-container",
+             // can be one of 'email' or 'phone_number_sms' or 'both'
+             identifierType: "phone_number_sms",
+             // Add the API key copied from 2nd step
+             apiKey: "cde8b713-27a8-4dcf-a2d0-b56b041c65ee",
+             // Add a callback here to handle the payload sent by sdk
+             onSuccess: (payload) => {
+                 console.log(payload)
+             },
+         };
+         var sawo = new Sawo(config);
+         sawo.showForm();
+     </script>
 
 </body>
 
